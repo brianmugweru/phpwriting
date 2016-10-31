@@ -1,0 +1,23 @@
+{
+  "name": "academic",
+  "authors": [
+    "Brian Muugweru <brianmugweru@gmail.com>"
+  ],
+  "description": "A php application that is in serious need of bower foundation components",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "config.php"
+  ],
+  "dependencies": {
+    "foundation": "^5.5.3",
+    "jquery": "^3.1.1"
+  }
+}
