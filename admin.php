@@ -35,7 +35,7 @@
       <td><?php echo $row["type"];?></td>
       <td><?php echo $row["subject"];?></td>
       <td><?php echo $row["pages"];?></td>
-      <td><?php echo $row["deadline"];?></td>
+      <td><?php echo $row["ownership"];?></td>
       <td><?php echo $row["language"];?></td>
       <td><?php echo $row["upload_date"];?></td>
       <td><?php echo $row["file_uploads"];?></td>
