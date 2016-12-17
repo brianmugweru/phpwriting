@@ -1,6 +1,6 @@
 <?php
-  include("session.php");
-  $sql = mysqli_query($db, "SELECT * FROM jobs WHERE status = 'uploaded'");
+  require("session.php");
+  $sql = mysqli_query($db, "SELECT * FROM jobs WHERE ownership = '$check_session'");
   if(!$sql){
     echo "could not pick up any data from the database";
   }
@@ -12,10 +12,6 @@
 <script src = "assets/bower_components/foundation/js/vendor/jquery.js"></script>
 </head>
 <body>
-<h1>jobs in the database</h1>
-<a href="logout.php">logout</a>
-<a href="completed.php">Finished</a>
-<a href="repeat.php">adminrejected</a>
 <table>
 <tr>
 <td>topic</td>
@@ -26,7 +22,6 @@
 <td>language</td>
 <td>upload date</td>
 <td>file upload</td>
-<td>Assign job</td>
 </tr>
 <?php
   if(mysqli_num_rows($sql) > 0){
@@ -41,7 +36,7 @@
       <td><?php echo $row["language"];?></td>
       <td><?php echo $row["upload_date"];?></td>
       <td><?php echo $row["file_uploads"];?></td>
-      <td><a href="viewspecs.php?job_id=<?php echo $row["id"] ?>" class="button">Assign job</a></td>
+      <!--<td><?php echo $row["status"]; ?></td>-->
 </tr>
 <?php
     }

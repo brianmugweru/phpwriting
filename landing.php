@@ -12,6 +12,10 @@
     }
   }
 
+  function calculateprice($pages){
+    return $pages*10;
+  }
+
   function setvalue($fieldname){
     if(isset($_POST[$fieldname])){
       echo $_POST[$fieldname];
@@ -82,15 +86,16 @@
     $discount = trim($_POST["discount"]);
     $desc = trim($_POST["desc"]);
     $owner = $usersession;
+    $price = calculateprice($pages);
 
-    echo $topic . "<br> " . $type."<br> ".$subject."<br> ".$academic."<br> ".$ref."<br> ".$style."<br> ".$lan."<br> ".$space."<br> ".$pages."<br> ".$deadline."<br> ".$discount."<br> ".$desc."<br> ". " <br>". "THE END DUDE<br>";
     $uploads = upload();
 
     echo $uploads;
-    $sql = mysqli_query($db, "INSERT INTO jobs(topic, type, subject, level, reference, style, language, spacing, pages, deadline, discount_code, description, ownership,file_uploads) VALUES ('$topic', '$type', '$subject', '$academic', '$ref', '$style', '$lan', '$space', '$pages', '$deadline', '$discount', '$desc', '$owner', '$uploads' )");
+    $sql = mysqli_query($db, "INSERT INTO jobs(topic, type, subject, level, reference, style, language, spacing, pages, deadline, discount_code, description, ownership,file_uploads, price) VALUES ('$topic', '$type', '$subject', '$academic', '$ref', '$style', '$lan', '$space', '$pages', '$deadline', '$discount', '$desc', '$owner', '$uploads','$price' )");
     if(!$sql){
       echo "Could not insert data ".mysqli_error($db);
     }
+    echo $topic . "<br> " . $type."<br> ".$subject."<br> ".$academic."<br> ".$ref."<br> ".$style."<br> ".$lan."<br> ".$space."<br> ".$pages."<br> ".$deadline."<br> ".$discount."<br> ".$desc."<br> ". " <br>". "THE END DUDE<br>";
   }
   function display($message){
 ?>
@@ -100,7 +105,9 @@
 </head>
 <body>
 <br><a href="logout.php">sign out</a><br>
+<a href="failed.php">Repeat job</a><br>
 <a href="assigned.php">see assigned jobs</a><br>
+<a href="personal.php">view personal jobs</a><br>
 <h1>Fill the form fields completely</h1>
 <form action="<?php $_PHP_SELF ?>" method="post" enctype="multipart/form-data">
 <label>Document Topic</label><br>

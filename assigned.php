@@ -19,7 +19,7 @@
 <?php
   if(mysqli_num_rows($sql)>0){
     while($row = mysqli_fetch_assoc($sql)){
-      $sql2 = mysqli_query($db, "SELECT * FROM jobs WHERE id = '".$row["job_id"]."'");
+      $sql2 = mysqli_query($db, "SELECT * FROM jobs WHERE id = '".$row["job_id"]."' AND status='assigned'");
         if($row = mysqli_fetch_assoc($sql2)){
 ?>
 <tr>

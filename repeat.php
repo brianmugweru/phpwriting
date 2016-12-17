@@ -1,6 +1,6 @@
 <?php
-  include("session.php");
-  $sql = mysqli_query($db, "SELECT * FROM jobs WHERE status = 'uploaded'");
+  require("session.php");
+  $sql = mysqli_query($db, "SELECT * FROM jobs WHERE status = 'adminpoor'");
   if(!$sql){
     echo "could not pick up any data from the database";
   }
@@ -14,8 +14,7 @@
 <body>
 <h1>jobs in the database</h1>
 <a href="logout.php">logout</a>
-<a href="completed.php">Finished</a>
-<a href="repeat.php">adminrejected</a>
+<a href="completed.php">Finished.php</a>
 <table>
 <tr>
 <td>topic</td>
@@ -41,7 +40,7 @@
       <td><?php echo $row["language"];?></td>
       <td><?php echo $row["upload_date"];?></td>
       <td><?php echo $row["file_uploads"];?></td>
-      <td><a href="viewspecs.php?job_id=<?php echo $row["id"] ?>" class="button">Assign job</a></td>
+      <td>Repeat job</td>
 </tr>
 <?php
     }
@@ -53,4 +52,4 @@
   $(document).foundation();
 </script>
 </body>
-</html>
+</html> 
