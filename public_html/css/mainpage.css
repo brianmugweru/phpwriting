@@ -1,0 +1,112 @@
+/*
+ * BODY CSS BEGINS HERE
+ */
+
+body{
+  width:100%;
+  height:100%;
+  background:linear-gradient(rgba(0,150,136,0.5),rgba(0,150,136,0.5))/*,url(public_html/img/layout/img.jpg)*/;
+  background-repeat:no-repeat;
+  background-attachment:fixed;
+}
+/*
+ * BODY CSS ENDS HERE
+ */
+
+/*
+ * PAGE CSS BEGINS HERE
+ */
+.row{
+  max-width:85%;
+}
+@media only screen and (max-width: 768px) {
+  .row {
+    max-width: 100%; 
+  } 
+}
+
+
+#content{
+  width:100%;
+  margin:0;
+  padding:0;
+}
+/*
+ * HEADER CSS BEGINS 
+ */
+#header{
+  background:#004d40;
+  height:80px;
+  line-height:80px;
+  width:100%;
+}
+#header h4{
+  height:80px;
+  line-height:80px;
+  color:white;
+}
+
+/*
+ * HEADER CSS ENDS HERE
+ */
+
+/*
+ * TOP BAR CSS BEGINS HERE
+ */
+
+.top-bar{
+  background:#004d40;
+  height:40px;
+  line-height:40px;
+  margin-top:10;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.top-bar-section ul{
+  background:#004d40;
+}
+.top-bar-section ul li{
+  background:#004d40;
+}
+.top-bar-section li.active:not(.has-form) a:not(.button){
+  background:#004d40;
+  line-height:40px;
+}
+.top-bar-section li.active:not(.has-form) a:hover:not(.button){
+  background:#0097a7;
+  color:white;
+}
+.top-bar-section li.active:not(.has-form) a:active:not(.button){
+  background:#006064;
+}
+/*
+ * TOP BAR CSS ENDS HERE
+ */
+/*
+ * WRAPPER CSS BEGINS HERE
+ */
+.wrapper{
+  background:#e0f2f1;
+  margin-top:15px;
+}
+
+.wrapper img {
+  height:300px;
+}
+.side-nav{
+  margin:auto;
+  max-width:90%;
+}
+.main-nav{
+  max-width:90%;
+  margin:auto;
+}
+/*
+ * WRAPPER CSS ENDS HERE
+ */
+input:not([type]), input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], input[type="color"], textarea{
+  height:1.9rem;
+}
+.postfix, .prefix, select{
+  height:1.9rem;
+}
