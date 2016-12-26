@@ -108,7 +108,7 @@
                         <div class="medium-10 columns"><input type="password" name="password"></div>
                       </div>
                       <div class="row">
-                        <div class="medium-12 left"><input class="button radius tiny" type="submit" name="submit" value="login"></div>
+                        <div class="medium-12 left"><input class="button tiny" type="submit" name="submit" value="login"></div>
                       </div>
                     </div>
                   </form>
@@ -135,7 +135,7 @@
                       <select name="style"><?php include("style.html") ?></select>
                       <label>Preferred language</label>
                       <select name="language"><?php include("language.html") ?></select>
-                      <a class="button radius tiny" href="#" >Get Order Form</a>
+                      <a class="button tiny" href="#" >Get Order Form</a>
                     </form>
                 </fieldset>
               </div>
