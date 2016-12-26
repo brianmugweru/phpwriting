@@ -5,7 +5,7 @@
 body{
   width:100%;
   height:100%;
-  background:linear-gradient(rgba(0,150,136,0.5),rgba(0,150,136,0.5))/*,url(public_html/img/layout/img.jpg)*/;
+  background:linear-gradient(rgba(178,223,219,0.8),rgba(178,223,219,0.6)),url("../img/layout/insideegg.jpg");
   background-repeat:no-repeat;
   background-attachment:fixed;
 }
@@ -36,16 +36,21 @@ body{
  */
 #header{
   background:#004d40;
-  height:80px;
-  line-height:80px;
+  box-shadow:4px 4px #888888;
+  height:90px;
+  line-height:90px;
   width:100%;
+  margin-top:-0.17rem;
 }
 #header h4{
-  height:80px;
-  line-height:80px;
+  height:90px;
+  line-height:90px;
+  font-size: 40;
   color:white;
+  margin-left:10px;
+  font-family: 'Helvetica';
+  text-transform: lowercase;
 }
-
 /*
  * HEADER CSS ENDS HERE
  */
@@ -57,8 +62,9 @@ body{
 .top-bar{
   background:#004d40;
   height:40px;
+  box-shadow:3px 3px #888888;
   line-height:40px;
-  margin-top:10;
+  margin-top:5;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
@@ -67,6 +73,7 @@ body{
 }
 .top-bar-section ul li{
   background:#004d40;
+  border-right:1px solid #b2dfdb;
 }
 .top-bar-section li.active:not(.has-form) a:not(.button){
   background:#004d40;
@@ -104,9 +111,53 @@ body{
 /*
  * WRAPPER CSS ENDS HERE
  */
+
+/*
+ * FOOTER CSS BEGINS
+ */
+
+.footer{
+  background:#009688;
+}
+.footer h3{
+  color:white;
+  border:1px solid white;
+}
+.footer p{
+  color: white;
+  text-align:center;
+}
+
+/*
+ * FOOTER CSS ENDS
+ */
+
+
+
+
+
+
+
+
+
 input:not([type]), input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], input[type="color"], textarea{
   height:1.9rem;
 }
 .postfix, .prefix, select{
   height:1.9rem;
+}
+/*
+ * Icon css
+ */
+.fa-user {
+  font-size: 25px;
+  color:#a1887f;
+  border:1px solid #a1887f;
+  padding:2px 7px;
+}
+.fa-unlock-alt{
+  font-size: 25px;
+  color:#a1887f;
+  padding:2px 7px;
+  border:1px solid #a1887f;
 }
