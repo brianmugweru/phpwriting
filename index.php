@@ -2,6 +2,7 @@
   <head>
     <title>academic</title>
     <link href="public_html/bower_components/foundation/css/foundation.min.css" type="text/css" rel="stylesheet" />
+    <link href="public_html/bower_components/font-awesome/css/font-awesome.min.css" type="text/css" rel="stylesheet" />
     <link href="public_html/bower_components/foundation/css/normalize.min.css" type="text/css" rel="stylesheet" />
     <link href="public_html/css/mainpage.css" type="text/css" rel="stylesheet" />
     <script src="public_html/bower_components/modernizr/modernizr.js"></script>
@@ -12,7 +13,7 @@
       <div id="content">
         <!-- Page header lies here for layout -->
         <div id="header">
-          <h4>Welcome to our site</h4>
+          <h4>ACADEMIA ZONE</h4>
         </div>
         <!-- Page header for layout ends here -->
 
@@ -58,23 +59,40 @@
             <h1>Welcome to academia</h1>
               <ul data-orbit class="images">
                 <li>
-                  <img src="" alt="slide1" />
-                  <div class="orbit-caption">caption-1</div>
+                  <img src="public_html/img/layout/3.jpg" alt="slide1" />
                 </li>
                 <li>
-                  <img src="" alt="slide2" />
-                  <div class="orbit-caption">caption-2</div>
+                  <img src="public_html/img/layout/2.jpg" alt="slide2" />
                 </li>
                 <li>
-                  <img src="" alt="slide3" />
-                  <div class="orbit-caption">caption-3</div>
+                  <img src="public_html/img/layout/apimage.jpg" alt="slide3" />
                 </li>
               </ul>
+              <div class="row">
+                <div class="medium-3 columns">
+                </div>
+                <div class="medium-9 columns">
+                  <h5>Home</h5>
+                  <h4>Academia Zone</h4>
+                  <p>Academic-paper.net is a US based online company that deals with academic and report writing. Our team consists of professionals with an array of knowledge in different fields of study. For the past years we have been able to deliver non-plagiarized quality work to our clientele since your document is worked on from scratch.</p>
+                  <p>We employ the best suited writers to attend to your paper giving you a customized paper according to your requirement. We make sure that the paper has been checked for any grammatical errors and plagiarism.</p>
+                  <p>For period we have been in this field, our experience has expanded greatly and we have no doubt promising our customers quality work. Choose us for a range of advantages building up to your satisfaction. With Intel-writers.us, it is quality service like never before. Read More</p>
+                  <p>Customer satisfaction is our number one objective. We value you and thus offer services worth putting a smile on your face. We are dedicated into making your heavy moments light and it is always our pleasure to ensure that you are satisfied.Read More</p>
+                </div>
+              </div>
             </div>
 
 
             <!-- Side nav for layout.Has login and order form for page -->
             <div class="side-nav columns large-3">
+              <!-- Search form acting as layout part -->
+              <div class="search">
+                <form action="#" method="get" class="search-form">
+                  <div class="input-group">
+                    <input type="text" placeholder="search..." class="form-control search-input" name="search"/>
+                  </div>
+                </form>
+              </div>
               <!-- Login form as part of layout -->
               <div class="login">
                 <fieldset>
@@ -82,15 +100,15 @@
                   <form action="login.php" method="post">
                     <div class="row">
                       <div class="row">
-                        <div class="medium-3 columns">username:</div>
-                        <div class="medium-9 columns"><input type="text" name="username"></div>
+                        <div class="medium-2 columns"><i class="fa fa-user" aria-hidden="true"></i></div>
+                        <div class="medium-10 columns"><input type="text" name="username"></div>
                       </div>
                       <div class="row">
-                        <div class="medium-3 columns">password:</div>
-                        <div class="medium-9 columns"><input type="password" name="password"></div>
+                        <div class="medium-2 columns"><i class="fa fa-unlock-alt" aria-hidden="true"></i></div>
+                        <div class="medium-10 columns"><input type="password" name="password"></div>
                       </div>
                       <div class="row">
-                        <div class="medium-12 left"><input type="submit" name="submit" value="login"></div>
+                        <div class="medium-12 left"><input class="button radius tiny" type="submit" name="submit" value="login"></div>
                       </div>
                     </div>
                   </form>
@@ -104,7 +122,7 @@
                     <legend>Order form</legend>
                     <form action="" method="post" enctype="multipart/form-data">
                       <label>Document Topic</label>
-                      <input type="text" name="topic">
+                      <input type="text" name="topic" disabled placeholder="My topic">
                       <label>Document Type</label>
                       <select name="type"><?php include("doctype.html") ?></select>
                       <label>Subject Area</label>
@@ -117,21 +135,7 @@
                       <select name="style"><?php include("style.html") ?></select>
                       <label>Preferred language</label>
                       <select name="language"><?php include("language.html") ?></select>
-                      <label>Spacing</label>
-                      <select name="spacing"><?php include("spacing.html") ?></select>
-                      <label>Number of pages(1 page(s)/275 Words)*</label>
-                      <input type="number" name="pages">
-                      <span style="font-size:13px;">please enter a value of between 1 and 100</span>
-                      <label>deadline</label>
-                      <select name="deadline"><?php include("deadline.html") ?></select>
-                      <label>Enter Special Discount code</label>
-                      <input type="text" name="discount">
-                      <label>Description</label>
-                      <textarea name="desc" style="resize:none"></textarea>
-                      <label>upload files</label>
-                      <input type="file" name="upload[]" multiple >
-                      <input type="hidden" name="username" value="<?php echo $usersession ?>" />
-                      <input type="submit" name="submit" value="Submit">
+                      <a class="button radius tiny" href="#" >Get Order Form</a>
                     </form>
                 </fieldset>
               </div>
@@ -144,9 +148,24 @@
         </div>
       </div>
       <!-- Wrapper form for main page ends here -->
-
-
     </div>
+
+    <!-- Footer section for layout begins here -->
+    <div class="footer">
+      <div class="row">
+        <div class="medium-6 columns">
+          <h3>Contact Info</h3>
+        </div>
+        <div class="medium-6 columns">
+          <h3>secure payment method</h3>
+        </div>
+      </div>
+      <div class="row">
+        <p class="copy">&copy 2016-2017 Academia Zone</p>
+      </div>
+    </div>
+    <!-- Footer css ends here -->
+
   </div>
 
 
