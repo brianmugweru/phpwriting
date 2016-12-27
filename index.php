@@ -56,7 +56,7 @@
           <!-- New foundation row inside wrapper for layout -->
           <div class="row collapse">
             <div class="columns large-9 main-nav">
-            <h1>Welcome to academia</h1>
+            <h2>Welcome to academia</h2>
               <ul data-orbit class="images">
                 <li>
                   <img src="public_html/img/layout/3.jpg" alt="slide1" />
@@ -70,52 +70,22 @@
               </ul>
               <div class="row">
                 <div class="medium-3 columns">
-                </div>
-                <div class="medium-9 columns">
-                  <h5>Home</h5>
-                  <h4>Academia Zone</h4>
-                  <p>Academic-paper.net is a US based online company that deals with academic and report writing. Our team consists of professionals with an array of knowledge in different fields of study. For the past years we have been able to deliver non-plagiarized quality work to our clientele since your document is worked on from scratch.</p>
-                  <p>We employ the best suited writers to attend to your paper giving you a customized paper according to your requirement. We make sure that the paper has been checked for any grammatical errors and plagiarism.</p>
-                  <p>For period we have been in this field, our experience has expanded greatly and we have no doubt promising our customers quality work. Choose us for a range of advantages building up to your satisfaction. With Intel-writers.us, it is quality service like never before. Read More</p>
-                  <p>Customer satisfaction is our number one objective. We value you and thus offer services worth putting a smile on your face. We are dedicated into making your heavy moments light and it is always our pleasure to ensure that you are satisfied.Read More</p>
-                </div>
-              </div>
-            </div>
-
-
-            <!-- Side nav for layout.Has login and order form for page -->
-            <div class="side-nav columns large-3">
-              <!-- Search form acting as layout part -->
-              <div class="search">
-                <form action="#" method="get" class="search-form">
-                  <div class="input-group">
-                    <input type="text" placeholder="search..." class="form-control search-input" name="search"/>
+                                    <div class="services">
+                    <h5>OUR SERVICES</h5>
+                    <i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="#">Essay Writing</a><br>
+                    <i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="#">Term Paper Writing</a><br>
+                    <i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="#">Dissertation Writing</a><br>
+                    <i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="#">Research paper</a><br>
+                    <i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="#">CourseWork Writing</a><br>
+                    <i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="#">Homework Writing</a><br>
+                    <i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="#">Custom Writing</a><br>
+                    <i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="#">Editing Writing</a><br>
+                    <i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="#">Proofreading</a><br>
+                    <i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="#">Speech Writing</a><br>
+ <i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="#">Custom Writing</a><br>
+                    <i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="#">Academic Writing</a><br>
                   </div>
-                </form>
-              </div>
-              <!-- Login form as part of layout -->
-              <div class="login">
-                <fieldset>
-                  <legend>Enter Login credentials</legend>
-                  <form action="login.php" method="post">
-                    <div class="row">
-                      <div class="row">
-                        <div class="medium-2 columns"><i class="fa fa-user" aria-hidden="true"></i></div>
-                        <div class="medium-10 columns"><input type="text" name="username"></div>
-                      </div>
-                      <div class="row">
-                        <div class="medium-2 columns"><i class="fa fa-unlock-alt" aria-hidden="true"></i></div>
-                        <div class="medium-10 columns"><input type="password" name="password"></div>
-                      </div>
-                      <div class="row">
-                        <div class="medium-12 left"><input class="button tiny" type="submit" name="submit" value="login"></div>
-                      </div>
-                    </div>
-                  </form>
-                </fieldset>
-              </div>
-              <!-- Login form ends here -->
-          
+
               <!-- Order form for users -->
                 <div class="order-form">
                   <fieldset>
@@ -141,6 +111,74 @@
               </div>
             <!-- Order form ends hers -->
 
+                </div>
+                <div class="medium-9 columns">
+                  <h5>Home</h5>
+                  <h4>Academia Zone</h4>
+                  <p>Academic-paper.net is a US based online company that deals with academic and report writing. Our team consists of professionals with an array of knowledge in different fields of study. For the past years we have been able to deliver non-plagiarized quality work to our clientele since your document is worked on from scratch.</p>
+                  <p>We employ the best suited writers to attend to your paper giving you a customized paper according to your requirement. We make sure that the paper has been checked for any grammatical errors and plagiarism.</p>
+                  <p>For period we have been in this field, our experience has expanded greatly and we have no doubt promising our customers quality work. Choose us for a range of advantages building up to your satisfaction. With Intel-writers.us, it is quality service like never before. Read More</p>
+                  <p>Customer satisfaction is our number one objective. We value you and thus offer services worth putting a smile on your face. We are dedicated into making your heavy moments light and it is always our pleasure to ensure that you are satisfied.Read More</p>
+                </div>
+              </div>
+            </div>
+
+
+            <!-- Side nav for layout.Has login and order form for page -->
+            <div class="side-nav columns large-3">
+
+              <!-- Search form acting as layout part -->
+              <div class="search">
+                <form action="#" method="get" class="search-form">
+                  <div class="input-group">
+                    <input type="text" placeholder="search..." class="form-control search-input" name="search"/>
+                  </div>
+                </form>
+              </div>
+              <!-- Search form ends here -->
+
+              <!-- Order title and image -->
+              <div class="order-title">
+                <h5>Make your order</h5>
+                <div class="order">
+                  <img src="public_html/img/layout/quality.jpg">
+                </div>
+              </div>
+              <!-- order title and pic ends here -->
+
+              <!-- Login form as part of layout -->
+              <div class="login">
+                <fieldset>
+                  <legend>Enter Login credentials</legend>
+                  <form action="login.php" method="post">
+                    <div class="row">
+                      <div class="row">
+                        <div class="medium-2 columns"><i class="fa fa-user" aria-hidden="true"></i></div>
+                        <div class="medium-10 columns"><input type="text" name="username"></div>
+                      </div>
+                      <div class="row">
+                        <div class="medium-2 columns"><i class="fa fa-unlock-alt" aria-hidden="true"></i></div>
+                        <div class="medium-10 columns"><input type="password" name="password"></div>
+                      </div>
+                      <div class="row">
+                        <div class="medium-12 left"><input class="button tiny" type="submit" name="submit" value="login"></div>
+                      </div>
+                    </div>
+                  </form>
+                </fieldset>
+              </div>
+              <!-- Login form ends here -->
+          
+              <!-- Contact us picture -->
+              <div class="contact1">
+                <h5>Contact us on</h5>
+              </div>
+
+              <div class="contact">
+              </div>
+              <!-- Contact us picture ends -->
+ 
+              
             </div>
             <!-- Side nav for layout ends here -->
 
