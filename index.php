@@ -5,6 +5,7 @@
     <link href="public_html/bower_components/font-awesome/css/font-awesome.min.css" type="text/css" rel="stylesheet" />
     <link href="public_html/bower_components/foundation/css/normalize.min.css" type="text/css" rel="stylesheet" />
     <link href="public_html/css/mainpage.css" type="text/css" rel="stylesheet" />
+    <link href="public_html/Webfont/Calendas-Plus-Regular-Webfont/stylesheet.css" type="text/css" rel="stylesheet">
     <script src="public_html/bower_components/modernizr/modernizr.js"></script>
   </head>
   <body>
@@ -13,13 +14,15 @@
       <div id="content">
         <!-- Page header lies here for layout -->
         <div id="header">
-          <h4>ACADEMIA ZONE</h4>
+          <h4>Academia zone</h4>
         </div>
         <!-- Page header for layout ends here -->
 
         <!-- top-bar begins here for layout -->
         <nav role="navigation" class="top-bar" data-topbar>
           <ul class="title-area">
+            <li class="name">
+            </li>
             <li class="toggle-topbar menu-icon">
               <a href="#">
                 <span>menu</span>
@@ -94,17 +97,13 @@
                       <label>Document Topic</label>
                       <input type="text" name="topic" disabled placeholder="My topic">
                       <label>Document Type</label>
-                      <select name="type"><?php include("doctype.html") ?></select>
+                      <select disabled name="type"><?php include("doctype.html") ?></select>
                       <label>Subject Area</label>
-                      <select name="subject"><?php include("subject.html") ?></select>
+                      <select name="subject" disabled><?php include("subject.html") ?></select>
                       <label>Academic level</label>
-                      <select name="academic"><?php include("edulevel.html") ?></select>
-                      <label>Number of references</label>
-                      <input type="number" name="ref">
-                      <label>Style</label>
-                      <select name="style"><?php include("style.html") ?></select>
-                      <label>Preferred language</label>
-                      <select name="language"><?php include("language.html") ?></select>
+                      <select name="academic" disabled><?php include("edulevel.html") ?></select>
+                                            <label>Preferred language</label>
+                      <select disabled name="language"><?php include("language.html") ?></select>
                       <a class="button tiny" href="#" >Get Order Form</a>
                     </form>
                 </fieldset>
@@ -112,9 +111,9 @@
             <!-- Order form ends hers -->
 
                 </div>
-                <div class="medium-9 columns">
-                  <h5>Home</h5>
-                  <h4>Academia Zone</h4>
+                <div class="medium-9 columns index">
+                  <h4>Home</h4>
+                  <h3>Academia Zone</h3>
                   <p>Academic-paper.net is a US based online company that deals with academic and report writing. Our team consists of professionals with an array of knowledge in different fields of study. For the past years we have been able to deliver non-plagiarized quality work to our clientele since your document is worked on from scratch.</p>
                   <p>We employ the best suited writers to attend to your paper giving you a customized paper according to your requirement. We make sure that the paper has been checked for any grammatical errors and plagiarism.</p>
                   <p>For period we have been in this field, our experience has expanded greatly and we have no doubt promising our customers quality work. Choose us for a range of advantages building up to your satisfaction. With Intel-writers.us, it is quality service like never before. Read More</p>
@@ -137,16 +136,7 @@
               </div>
               <!-- Search form ends here -->
 
-              <!-- Order title and image -->
-              <div class="order-title">
-                <h5>Make your order</h5>
-                <div class="order">
-                  <img src="public_html/img/layout/quality.jpg">
-                </div>
-              </div>
-              <!-- order title and pic ends here -->
-
-              <!-- Login form as part of layout -->
+                            <!-- Login form as part of layout -->
               <div class="login">
                 <fieldset>
                   <legend>Enter Login credentials</legend>
@@ -168,17 +158,59 @@
                 </fieldset>
               </div>
               <!-- Login form ends here -->
-          
+
+              <!-- Order now 2 picture for site -->
+              <div class="order2">
+                <img src="public_html/img/layout/OrderNow.png" class="img1" alt="" />
+                <img src="public_html/img/layout/Order-Now-Teal.png" alt="" class="img2"/>
+              </div>
+              <!-- Order now picture ends here -->
+ 
+
               <!-- Contact us picture -->
               <div class="contact1">
                 <h5>Contact us on</h5>
               </div>
 
               <div class="contact">
+                <img src="public_html/img/layout/contact1.png" alt="" />
+<!-- use icons to define contact details to make it look cool -->
+                <span><i class="fa fa-envelope" aria-hidden="true"></i>:  academiazone@gmail.com</span><br>
+                <span><i class="fa fa-phone" aria-hidden="true"></i>  : +1-315-355-3664</span>
               </div>
+            
               <!-- Contact us picture ends -->
- 
-              
+
+
+              <!-- Order title and image -->
+              <div class="order-title">
+                <h5>Make your order</h5>
+                <div class="order">
+                  <img src="public_html/img/layout/quality.jpg">
+                </div>
+              </div>
+               <!--order title and pic ends here -->
+  
+              <!-- social media Hook up links for site -->
+              <div class="social">
+                <h5>FOLLOW US AND LIKE US</h5>
+                <ul>
+                  <li>
+                    <i class="fa fa-google-plus" aria-hidden="true"></i>
+                  </li>
+                  <li>
+                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                  </li>
+                  <li>
+                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Social media hook up ends here -->
+
+
+                            
             </div>
             <!-- Side nav for layout ends here -->
 
