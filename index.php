@@ -6,6 +6,7 @@
     <link href="public_html/bower_components/foundation/css/normalize.min.css" type="text/css" rel="stylesheet" />
     <link href="public_html/css/mainpage.css" type="text/css" rel="stylesheet" />
     <link href="public_html/Webfont/Calendas-Plus-Regular-Webfont/stylesheet.css" type="text/css" rel="stylesheet">
+    <link href="public_html/Webfont/AnsonFont-1.01/web/stylesheet.css" type="text/css" rel="stylesheet">
     <script src="public_html/bower_components/modernizr/modernizr.js"></script>
   </head>
   <body>
@@ -53,13 +54,13 @@
           </section>
         </nav>
         <!-- Top bar ends here -->
+      </div>
+    </div>
         
         <!-- Wrapper collumn large-8 comes after header -->
-        <div class="wrapper">
+        <div class="row collapse wrapper">
           <!-- New foundation row inside wrapper for layout -->
-          <div class="row collapse">
             <div class="columns large-9 main-nav">
-            <h2>Welcome to academia</h2>
               <ul data-orbit class="images">
                 <li>
                   <img src="public_html/img/layout/3.jpg" alt="slide1" />
@@ -71,22 +72,22 @@
                   <img src="public_html/img/layout/apimage.jpg" alt="slide3" />
                 </li>
               </ul>
-              <div class="row">
+              <div class="row ">
                 <div class="medium-3 columns">
-                                    <div class="services">
-                    <h5>OUR SERVICES</h5>
-                    <i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="#">Essay Writing</a><br>
-                    <i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="#">Term Paper Writing</a><br>
-                    <i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="#">Dissertation Writing</a><br>
-                    <i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="#">Research paper</a><br>
-                    <i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="#">CourseWork Writing</a><br>
-                    <i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="#">Homework Writing</a><br>
-                    <i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="#">Custom Writing</a><br>
-                    <i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="#">Editing Writing</a><br>
-                    <i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="#">Proofreading</a><br>
-                    <i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="#">Speech Writing</a><br>
- <i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="#">Custom Writing</a><br>
-                    <i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="#">Academic Writing</a><br>
+                  <div class="services">
+                    <p>Our Services</p>
+                    <a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Essay Writing</a><br>
+                    <a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Term Paper Writing</a><br>
+                    <a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Dissertation Writing</a><br>
+                    <a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Research paper</a><br>
+                    <a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i>CourseWork Writing</a><br>
+                    <a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Homework Writing</a><br>
+                    <a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Custom Writing</a><br>
+                    <a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Editing Writing</a><br>
+                    <a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Proofreading</a><br>
+                    <a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Speech Writing</a><br>
+                    <a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Custom Writing</a><br>
+                    <a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Academic Writing</a><br>
                   </div>
 
               <!-- Order form for users -->
@@ -104,7 +105,7 @@
                       <select name="academic" disabled><?php include("edulevel.html") ?></select>
                                             <label>Preferred language</label>
                       <select disabled name="language"><?php include("language.html") ?></select>
-                      <a class="button tiny" href="#" >Get Order Form</a>
+                      <a class="button tiny radius" href="#">Order Form</a>
                     </form>
                 </fieldset>
               </div>
@@ -112,8 +113,7 @@
 
                 </div>
                 <div class="medium-9 columns index">
-                  <h4>Home</h4>
-                  <h3>Academia Zone</h3>
+                  <h3>Welcome to Academia</h3>
                   <p>Academic-paper.net is a US based online company that deals with academic and report writing. Our team consists of professionals with an array of knowledge in different fields of study. For the past years we have been able to deliver non-plagiarized quality work to our clientele since your document is worked on from scratch.</p>
                   <p>We employ the best suited writers to attend to your paper giving you a customized paper according to your requirement. We make sure that the paper has been checked for any grammatical errors and plagiarism.</p>
                   <p>For period we have been in this field, our experience has expanded greatly and we have no doubt promising our customers quality work. Choose us for a range of advantages building up to your satisfaction. With Intel-writers.us, it is quality service like never before. Read More</p>
@@ -139,20 +139,18 @@
                             <!-- Login form as part of layout -->
               <div class="login">
                 <fieldset>
-                  <legend>Enter Login credentials</legend>
+                  <legend>Login Credentials</legend>
                   <form action="login.php" method="post">
-                    <div class="row">
-                      <div class="row">
-                        <div class="medium-2 columns"><i class="fa fa-user" aria-hidden="true"></i></div>
-                        <div class="medium-10 columns"><input type="text" name="username"></div>
-                      </div>
-                      <div class="row">
-                        <div class="medium-2 columns"><i class="fa fa-unlock-alt" aria-hidden="true"></i></div>
-                        <div class="medium-10 columns"><input type="password" name="password"></div>
-                      </div>
-                      <div class="row">
-                        <div class="medium-12 left"><input class="button tiny" type="submit" name="submit" value="login"></div>
-                      </div>
+                    <div class="row collapse">
+                      <div class="medium-1 columns"><i class="fa fa-user" aria-hidden="true"></i></div>
+                      <div class="medium-11 columns"><input type="text" name="username"></div>
+                    </div>
+                    <div class="row collapse">
+                      <div class="medium-1 columns"><i class="fa fa-unlock-alt" aria-hidden="true"></i></div>
+                      <div class="medium-11 columns"><input type="password" name="password"></div>
+                    </div>
+                    <div class="row collapse">
+                      <div class="medium-12 end"><input class="button tiny radius" type="submit" name="submit" value="login"></div>
                     </div>
                   </form>
                 </fieldset>
@@ -168,12 +166,12 @@
  
 
               <!-- Contact us picture -->
-              <div class="contact1">
+              <div class="contacthead">
                 <h5>Contact us on</h5>
               </div>
 
               <div class="contact">
-                <img src="public_html/img/layout/contact1.png" alt="" />
+                <img src="public_html/img/layout/contact-icons.png" alt="" />
 <!-- use icons to define contact details to make it look cool -->
                 <span><i class="fa fa-envelope" aria-hidden="true"></i>:  academiazone@gmail.com</span><br>
                 <span><i class="fa fa-phone" aria-hidden="true"></i>  : +1-315-355-3664</span>
@@ -196,13 +194,13 @@
                 <h5>FOLLOW US AND LIKE US</h5>
                 <ul>
                   <li>
-                    <i class="fa fa-google-plus" aria-hidden="true"></i>
+                    <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
                   </li>
                   <li>
-                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                    <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
                   </li>
                   <li>
-                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                    <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                   </li>
                 </ul>
               </div>
@@ -213,16 +211,11 @@
                             
             </div>
             <!-- Side nav for layout ends here -->
-
-
-        </div>
-      </div>
       <!-- Wrapper form for main page ends here -->
-    </div>
+      </div>
 
     <!-- Footer section for layout begins here -->
-    <div class="footer">
-      <div class="row">
+      <div class="row footer">
         <div class="medium-6 columns">
           <h3>Contact Info</h3>
         </div>
@@ -233,10 +226,8 @@
       <div class="row">
         <p class="copy">&copy 2016-2017 Academia Zone</p>
       </div>
-    </div>
     <!-- Footer css ends here -->
 
-  </div>
 
 
     <script src="public_html/bower_components/foundation/js/vendor/jquery.js" type="text/javascript"></script>
