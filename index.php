@@ -1,58 +1,15 @@
-<html>
-  <head>
-    <title>academic</title>
-    <link href="public_html/bower_components/foundation/css/foundation.min.css" type="text/css" rel="stylesheet" />
-    <link href="public_html/bower_components/font-awesome/css/font-awesome.min.css" type="text/css" rel="stylesheet" />
-    <link href="public_html/bower_components/foundation/css/normalize.min.css" type="text/css" rel="stylesheet" />
-    <link href="public_html/css/mainpage.css" type="text/css" rel="stylesheet" />
-    <link href="public_html/Webfont/Calendas-Plus-Regular-Webfont/stylesheet.css" type="text/css" rel="stylesheet">
-    <link href="public_html/Webfont/AnsonFont-1.01/web/stylesheet.css" type="text/css" rel="stylesheet">
-    <script src="public_html/bower_components/modernizr/modernizr.js"></script>
-  </head>
-  <body>
-    <!-- Row section to get auto spaces from left and right of margin -->
+<?php
+  include("resources/templates/mainpage/masthead.html");
+?>
+   <!-- Row section to get auto spaces from left and right of margin -->
     <div class="row">
       <div id="content">
         <!-- Page header lies here for layout -->
-        <div id="header">
-          <h4>Academia zone</h4>
-        </div>
+<?php     include("resources/templates/mainpage/header.html"); ?>
         <!-- Page header for layout ends here -->
 
         <!-- top-bar begins here for layout -->
-        <nav role="navigation" class="top-bar" data-topbar>
-          <ul class="title-area">
-            <li class="name">
-            </li>
-            <li class="toggle-topbar menu-icon">
-              <a href="#">
-                <span>menu</span>
-              </a>
-            </li>
-          </ul>
-          <section class="top-bar-section">
-            <ul class="left">
-              <li class="active item-1">
-                <a href="index.php">HOME</a>
-              </li>
-              <li class="active item-2">
-                <a href="#">ABOUT US</a>
-              </li>
-              <li class="active item-3">
-                <a href="#">OUR SERVICES</a>
-              </li>
-              <li class="active item-4">
-                <a href="#">ORDER NOW</a>
-              </li>
-              <li class="active item-5">
-                <a href="#">WHY US</a>
-              </li>
-              <li class="active item-6">
-                <a href="#">CONTACT US</a>
-              </li>
-            </ul>
-          </section>
-        </nav>
+<?php     include("resources/templates/mainpage/navbar.html"); ?>
         <!-- Top bar ends here -->
       </div>
     </div>
@@ -61,63 +18,15 @@
         <div class="row collapse wrapper">
           <!-- New foundation row inside wrapper for layout -->
             <div class="columns large-9 main-nav">
-              <ul data-orbit class="images">
-                <li>
-                  <img src="public_html/img/layout/3.jpg" alt="slide1" />
-                </li>
-                <li>
-                  <img src="public_html/img/layout/2.jpg" alt="slide2" />
-                </li>
-                <li>
-                  <img src="public_html/img/layout/apimage.jpg" alt="slide3" />
-                </li>
-              </ul>
+<?php          include("resources/templates/mainpage/slider.html"); ?>
               <div class="row ">
                 <div class="medium-3 columns">
-                  <div class="services">
-                    <p>Our Services</p>
-                    <a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Essay Writing</a><br>
-                    <a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Term Paper Writing</a><br>
-                    <a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Dissertation Writing</a><br>
-                    <a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Research paper</a><br>
-                    <a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i>CourseWork Writing</a><br>
-                    <a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Homework Writing</a><br>
-                    <a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Custom Writing</a><br>
-                    <a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Editing Writing</a><br>
-                    <a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Proofreading</a><br>
-                    <a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Speech Writing</a><br>
-                    <a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Custom Writing</a><br>
-                    <a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Academic Writing</a><br>
-                  </div>
-
-              <!-- Order form for users -->
-                <div class="order-form">
-                  <fieldset>
-                    <legend>Order form</legend>
-                    <form action="" method="post" enctype="multipart/form-data">
-                      <label>Document Topic</label>
-                      <input type="text" name="topic" disabled placeholder="My topic">
-                      <label>Document Type</label>
-                      <select disabled name="type"><?php include("doctype.html") ?></select>
-                      <label>Subject Area</label>
-                      <select name="subject" disabled><?php include("subject.html") ?></select>
-                      <label>Academic level</label>
-                      <select name="academic" disabled><?php include("edulevel.html") ?></select>
-                                            <label>Preferred language</label>
-                      <select disabled name="language"><?php include("language.html") ?></select>
-                      <a class="button tiny radius" href="#">Order Form</a>
-                    </form>
-                </fieldset>
-              </div>
-            <!-- Order form ends hers -->
-
+<!-- left bar section -->
+<?php             include("resources/templates/mainpage/leftbar.html"); ?>
+<!-- left bar section ends -->
                 </div>
                 <div class="medium-9 columns index">
-                  <h3>Welcome to Academia</h3>
-                  <p>Academic-paper.net is a US based online company that deals with academic and report writing. Our team consists of professionals with an array of knowledge in different fields of study. For the past years we have been able to deliver non-plagiarized quality work to our clientele since your document is worked on from scratch.</p>
-                  <p>We employ the best suited writers to attend to your paper giving you a customized paper according to your requirement. We make sure that the paper has been checked for any grammatical errors and plagiarism.</p>
-                  <p>For period we have been in this field, our experience has expanded greatly and we have no doubt promising our customers quality work. Choose us for a range of advantages building up to your satisfaction. With Intel-writers.us, it is quality service like never before. Read More</p>
-                  <p>Customer satisfaction is our number one objective. We value you and thus offer services worth putting a smile on your face. We are dedicated into making your heavy moments light and it is always our pleasure to ensure that you are satisfied.Read More</p>
+<?php             include("resources/templates/layout/index.html"); ?>
                 </div>
               </div>
             </div>
@@ -125,117 +34,21 @@
 
             <!-- Side nav for layout.Has login and order form for page -->
             <div class="side-nav columns large-3">
-
-              <!-- Search form acting as layout part -->
-              <div class="search">
-                <form action="#" method="get" class="search-form">
-                  <div class="input-group">
-                    <input type="text" placeholder="search..." class="form-control search-input" name="search"/>
-                  </div>
-                </form>
-              </div>
-              <!-- Search form ends here -->
-
-                            <!-- Login form as part of layout -->
-              <div class="login">
-                <fieldset>
-                  <legend>Login Credentials</legend>
-                  <form action="login.php" method="post">
-                    <div class="row collapse">
-                      <div class="medium-1 columns"><i class="fa fa-user" aria-hidden="true"></i></div>
-                      <div class="medium-11 columns"><input type="text" name="username"></div>
-                    </div>
-                    <div class="row collapse">
-                      <div class="medium-1 columns"><i class="fa fa-unlock-alt" aria-hidden="true"></i></div>
-                      <div class="medium-11 columns"><input type="password" name="password"></div>
-                    </div>
-                    <div class="row collapse">
-                      <div class="medium-12 end"><input class="button tiny radius" type="submit" name="submit" value="login"></div>
-                    </div>
-                  </form>
-                </fieldset>
-              </div>
-              <!-- Login form ends here -->
-
-              <!-- Order now 2 picture for site -->
-              <div class="order2">
-                <img src="public_html/img/layout/OrderNow.png" class="img1" alt="" />
-                <img src="public_html/img/layout/Order-Now-Teal.png" alt="" class="img2"/>
-              </div>
-              <!-- Order now picture ends here -->
- 
-
-              <!-- Contact us picture -->
-              <div class="contacthead">
-                <h5>Contact us on</h5>
-              </div>
-
-              <div class="contact">
-                <img src="public_html/img/layout/contact-icons.png" alt="" />
-<!-- use icons to define contact details to make it look cool -->
-                <span><i class="fa fa-envelope" aria-hidden="true"></i>:  academiazone@gmail.com</span><br>
-                <span><i class="fa fa-phone" aria-hidden="true"></i>  : +1-315-355-3664</span>
-              </div>
-            
-              <!-- Contact us picture ends -->
-
-
-              <!-- Order title and image -->
-              <div class="order-title">
-                <h5>Make your order</h5>
-                <div class="order">
-                  <img src="public_html/img/layout/quality.jpg">
-                </div>
-              </div>
-               <!--order title and pic ends here -->
-  
-              <!-- social media Hook up links for site -->
-              <div class="social">
-                <h5>FOLLOW US AND LIKE US</h5>
-                <ul>
-                  <li>
-                    <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-                  </li>
-                  <li>
-                    <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                  </li>
-                  <li>
-                    <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                  </li>
-                </ul>
-              </div>
-
-              <!-- Social media hook up ends here -->
-
-
-                            
+<!-- right side bar begins here -->
+<?php         include("resources/templates/mainpage/rightbar.html"); ?>
+<!-- right side bar ends here -->
             </div>
             <!-- Side nav for layout ends here -->
       <!-- Wrapper form for main page ends here -->
       </div>
 
     <!-- Footer section for layout begins here -->
-      <div class="row footer">
-        <div class="medium-6 columns">
-          <h3>Contact Info</h3>
-        </div>
-        <div class="medium-6 columns">
-          <h3>secure payment method</h3>
-        </div>
-      </div>
-      <div class="row">
-        <p class="copy">&copy 2016-2017 Academia Zone</p>
-      </div>
-    <!-- Footer css ends here -->
+<?php         include("resources/templates/mainpage/footer.html"); ?>
+          <!-- Footer css ends here -->
+<!-- Footer scripts begin here -->
+<?php         include("resources/templates/mainpage/footer_scripts.html"); ?>
 
 
-
-    <script src="public_html/bower_components/foundation/js/vendor/jquery.js" type="text/javascript"></script>
-    <script src="public_html/bower_components/foundation/js/foundation.min.js" type="text/javascript"></script>
-    <script src="public_html/bower_components/foundation/js/foundation/foundation.topbar.js" type="text/javascript"></script>
-    <script src="public_html/bower_components/foundation/js/foundation/foundation.orbit.js" type="text/javascript"></script>
-    <script>
-      $(document).foundation();
-    </script>
+<!-- Footer scripts end here -->
   </body>
 </html>
