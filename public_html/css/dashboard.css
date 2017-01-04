@@ -1,3 +1,75 @@
 /*
 *  DASHBOARD CSS PAGE FOR PAGE DASHBOARD 
 */
+
+body, html{
+  font-family:consolas;
+  font-weight:100;
+  font-style:normal;
+  position:relative;
+  height:100% !important;
+}
+
+body{
+  width:100%;
+  font-family:'open sans', sans-serif;
+  background:#f3e5f5;
+  color:#fff;
+}
+body:not(.page-horizontal-bar):not(.small-sidebar){
+  text-align:center;
+}
+p{
+  display:block;
+  font-weight:400;
+  letter-spacing:normal;
+  line-height:22px;
+  font-style:normal;
+  white-space:normal;
+}
+.row{
+  max-width:100%;
+}
+
+.header{
+  background:linear-gradient(#00796b,#009688,#26a69a);
+  box-shadow:2px 2.5px 1px #607d8b;
+  height:100px;
+  width:100%;
+}
+.header h4{
+  text-align:left;
+  line-height:58px;
+  text-indent:10px;
+  letter-spacing:0.3px;
+  font-weight:bold;
+  word-spacing:0.7px;
+  font-size: 40px;
+  color:#f5fffe;
+  font-family: 'calendas_plusregular';
+  text-shadow:2.3px 2.3px 1px #004d40;
+  text-transform: capitalize;
+}
+
+.top-bar{
+  height:33px;
+  line-height:33px;
+  background:transparent;
+}
+.top-bar-section ul li{
+  background:transparent;
+  height:33px;
+  line-height:33px;
+  margin-right:4px;
+}
+.top-bar-section li:not(.has-form) a:not(.button){
+  background:#00897b;
+  height:33px;
+  line-height:33px;
+}
+.top-bar-section li.active:not(.has-form) a:not(.button){
+  background:#f3e5f5;
+  color:#00897b;
+  line-height:33px;
+}
+
