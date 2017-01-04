@@ -1,5 +1,5 @@
 <?php
-  include("resources/templates/mainpage/masthead.html");
+  include_once("resources/templates/mainpage/masthead.html");
 ?>
    <!-- Row section to get auto spaces from left and right of margin -->
     <div class="row">
