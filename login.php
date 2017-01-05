@@ -1,8 +1,7 @@
 <?php
   session_start();
-
-  include("config.php");
-  include('passhash.php');
+  include("resources/config.php");
+  include('resources/library/passhash.php');
   $message="";
 
   if(isset($_POST['submit'])){

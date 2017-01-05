@@ -13,8 +13,8 @@ body, html{
 body{
   width:100%;
   font-family:'open sans', sans-serif;
-  background:#f3e5f5;
-  color:#fff;
+  background:#efebe9;
+  color:#212121;
 }
 body:not(.page-horizontal-bar):not(.small-sidebar){
   text-align:center;
@@ -52,9 +52,11 @@ p{
 }
 
 .top-bar{
-  height:33px;
-  line-height:33px;
+  height:30px;
+  line-height:30px;
   background:transparent;
+  width:99%;
+  margin:auto;
 }
 .top-bar-section ul li{
   background:transparent;
@@ -64,8 +66,8 @@ p{
 }
 .top-bar-section li:not(.has-form) a:not(.button){
   background:#00897b;
-  height:33px;
-  line-height:33px;
+  height:30px;
+  line-height:30px;
 }
 .top-bar-section li.active:not(.has-form) a:not(.button){
   background:#f3e5f5;
@@ -73,3 +75,41 @@ p{
   line-height:33px;
 }
 
+.head{
+  background:#e0e0e0;
+  width:99.5%;
+  margin:10px auto;
+  border-radius:5px;
+}
+.head h3{
+  padding:12px;
+  color:#757575;
+  text-align:left;
+}
+.content{
+  max-width:97%;
+}
+.sidebar{
+  max-width:95%;
+  background:#b9f6ca;
+}
+.sidebar img{
+  margin-top:10px;
+  height:100px;
+  width:100px;
+  border-radius:80px;
+  border:1px solid gray;
+}
+.sidebar ul li{
+  list-style-type:none;
+  text-align:center;
+}
+.main{
+  max-width:95%;
+  background:#f9fbe7;
+}
+.main .start{
+  text-align:left;
+  padding:25px;
+
+}

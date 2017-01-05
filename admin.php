@@ -1,15 +1,10 @@
 <?php
-  include("session.php");
+  include("resources/library/session.php");
   $sql = mysqli_query($db, "SELECT * FROM jobs WHERE status = 'uploaded'");
   if(!$sql){
     echo "could not pick up any data from the database";
   }
 ?>
-<html>
-<head>
-<title>view jobs</title>
-<link type="text/css" href="assets/bower_components/foundation/css/foundation.min.css" rel="stylesheet">
-<script src = "assets/bower_components/foundation/js/vendor/jquery.js"></script>
 </head>
 <body>
 <h1>jobs in the database</h1>

@@ -1,6 +1,6 @@
 <?php include("resources/templates/dashboard/masthead.html"); ?>
 
-<div class="row column header">
+<div class="row header">
     <h4>Academia Zone</h4>
     <nav role="navigation" class="top-bar" data-topbar>
       <ul class="title-area">
@@ -18,16 +18,16 @@
             <a href="#">Dashboard</a>
           </li>
           <li class="active">
-            <a href="#">jobs</a>
+            <a href="#">Manage Orders</a>
           </li>
           <li>
-            <a href="#">writers</a>
+            <a href="#">users</a>
           </li>
           <li>
-            <a href="#">Order Form</a>
+            <a href="#">Writers</a>
           </li>
           <li>
-            <a href="#">home</a>
+            <a href="#">Clients</a>
           </li>
         </ul>
     
@@ -45,3 +45,19 @@
       </section>
     </nav>
 </div>
+<div class="row head">
+  <div><h3>Dashboard</h3></div>
+<div class="medium-2 columns sidebar" data-equalizer-watch>
+    <img src="" alt="" />
+    <p>admin</p>
+  </div>
+  <div class="medium-10 columns main">
+    <div class="start">dashboard</div>
+    <div class="end">what
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
