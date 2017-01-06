@@ -8,8 +8,9 @@
 <!-- Dashboard for layout -->
 <?php require("resources/templates/dashboard/dash.html"); ?>
 <!-- Dashboard ends for layout -->
-</body>
-</html>
+<!-- Dashboard footer begins -->
+<?php require("resources/templates/dashboard/footer_scripts.html"); ?>
+<!-- Dashboard footer ends here -->
 <?php function dashboard(){
   echo "welcome";
 }
