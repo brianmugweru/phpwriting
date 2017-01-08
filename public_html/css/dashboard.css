@@ -8,6 +8,7 @@ body, html{
   font-style:normal;
   position:relative;
   height:100% !important;
+  overflow-x:hidden;
 }
 
 body{
@@ -92,7 +93,7 @@ p{
 }
 
 .sidebar{
-  min-height:70vh;
+  min-height:90vh;
   display:block;
   overflow:visible;
   max-width:99%;
