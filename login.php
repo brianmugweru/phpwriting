@@ -23,7 +23,6 @@
     foreach($required as $field){
       if(!isset($_POST[$field]) or !$_POST[$field]){
         $missing[]=$field;
-        echo "missing fields:".$field;
       }
     }
     if($missing){
@@ -34,6 +33,9 @@
     }
   }
   
+  /*
+   * Function for creating user session after checking for username and password from database
+   */
   function session(){
     global $db;
 
@@ -44,39 +46,83 @@
     if(!$sql_sess){
       die("system failure in session creations". mysqli_error($db));
     }
-    while($row = mysqli_fetch_array($sql_sess, MYSQLI_ASSOC)){
+    if($row = mysqli_fetch_array($sql_sess, MYSQLI_ASSOC)){
       $dbpassword = $row["password"];
       $userrole = $row["role"];
-    }
 
-    if(password_verify($password, $dbpassword)){
-      $_SESSION["username"] = $username;
+      if(password_verify($password, $dbpassword)){
+        $_SESSION["username"] = $username;
 
-      if($userrole =="normal"){
-        header("location:landing.php");
-      }else if($userrole=="admin"){
-        header("location:admin.php");
+        if($userrole =="normal"){
+          header("location:portal.php");
+        }else if($userrole=="admin"){
+          header("location:portal.php");
+        }
+      }
+      else{
+        display( array(), $message="Wrong username and password combination, keep trying dear");
       }
     }
     else{
-      display( array(), $message="Wrong username and password combination, keep trying dear");
+      display(array(), $message="Sorry sweatheart, You do not exist in our database");
     }
   }
+/*
+ * function for displaying login form incase of wrong password or username situation"
+ */
   function display( $missing, $message=""){
+  include_once("resources/templates/mainpage/masthead.html");
 ?>
 <html>
   <head>
   <title>login form</title>
   </head>
-  <body>
-  <h1>Enter login credentials</h1>
-  <?php if(strlen($message)>0){?>
-    <p><?php echo $message ?></p>
-  <?php } ?>
-  <form action="<?php $_PHP_SELF ?>" method="post">
-    username:<input type="text" name="username"><br>
-    password:<input type="password" name="password"><br>
-    <input type="submit" name="submit" value="login">
+  <body style="background:#80cbc4">
+<?php     include("resources/templates/mainpage/header.html"); ?>
+<?php     include("resources/templates/mainpage/navbar.html"); ?>
+  <br><h1 style="margin-left:7%;">Login credentials</h1><br>
+    <form action="<?php $_PHP_SELF ?>" method="post">
+    <div class="row">
+      <div class="medium-2 columns"></div>
+      <div class="medium-8 columns end">
+        <div class="row">
+          <div class="medium-2 columns"></div>
+          <div class="medium-10 columns end">
+            <?php if(strlen($message)>0){?>
+              <p class="alert radius label" style="padding:9px; font-size:15px;"><?php echo $message ?></p>
+            <?php } ?>
+            <?php if(sizeof($missing)>0){ ?>
+            <p class="alert radius label" style="padding:9px; font-size:15px;">
+            <?php foreach($missing as $value){ ?>
+                <span><?php echo $value."," ?></span>
+            <?php }?>field[s] is required </p>
+              <?php } ?>
+                      </div>
+        </div><br>
+        <fieldset>
+        <legend>Enter username and password</legend>
+        <div class="row">
+          <div class="small-12 medium-2 columns">
+            <label for="username" class="right inline">username:</label>
+          </div> 
+          <div class="small-12 medium-10 columns">
+            <input type="text" id="username" name="username" placeholder="enter username"></label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="small-12 medium-2 columns">
+            <label for="password" class="right inline">password:</label>
+          </div>
+          <div class="small-12 medium-10 columns">
+            <input type="password" id="password" name="password" placeholder="enter password"></label>
+          </div>
+        </div>
+        <div class="row">
+          <input class="button small right radius" style="margin-right:30px;" type="submit" name="submit" value="login">
+        </div>
+        </fieldset>
+      </div>
+    </div>
   </form>
   </body>
 </html>
