@@ -1,13 +1,20 @@
 <div class="row head">
 
-    <h3>Dashboard</h3>
-    <div class="content">
+    <div class="row">
+      <div class="medium-3 columns">
+        <h3>Dashboard</h3>
+      </div>
+      <div class="medium-9 columns">
+        <p class="right" style="height:40px;line-height:60px; color:teal;">Welcome <?php echo $_SESSION['username']; ?></p>
+      </div>
+    </div>
+    <div class="content" data-equalizer data-equalize-on="medium">
       <div class="medium-2 columns sidebar" data-equalizer-watch>
          <?php include("resources/templates/menus/dashmenu.html"); ?>
       </div>
-      <div class="medium-10 columns main">
+      <div class="medium-10 columns main" data-equalizer-watch>
         <div class="start">dashboard</div>
-        <div class="end"><?php dashboard() ?> </div>
+        <div class="end"><?php dashboard($definestatus) ?> </div>
       </div>
     </div>
 </div>
