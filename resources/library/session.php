@@ -1,5 +1,5 @@
 <?php
-  include('config.php');
+  include($_SERVER["DOCUMENT_ROOT"].'/academic/resources/config.php');
   session_start();
 
   if(!isset($_SESSION["username"]) or empty($_SESSION["username"])){
@@ -25,5 +25,6 @@
       return("user does not exist in the database");
     }
   }
+  $role = getField('role');
 
 ?>
