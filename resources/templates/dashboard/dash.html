@@ -14,6 +14,9 @@
       </div>
       <div class="medium-10 columns main" data-equalizer-watch>
         <div class="start">dashboard</div>
+        <?php if(!isset($definestatus)){
+             $definestatus = "";
+             }?>
         <div class="end"><?php dashboard($definestatus) ?> </div>
       </div>
     </div>
