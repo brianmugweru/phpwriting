@@ -8,6 +8,6 @@
     while($row = mysqli_fetch_assoc($sql)){
       $username = $row["username"];
       $fullname = $row["fullname"];
-      $email = $row["
     }
+  }
 ?>
