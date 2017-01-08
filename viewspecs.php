@@ -1,6 +1,8 @@
 <?php
-  include("session.php");
+  include("portal.php");
+  function dashboard(){
   $id = $_GET['job_id'];
+    global $db;
   $sql = mysqli_query($db, "SELECT * FROM jobs WHERE id = '$id'");
   if(!$sql){
     echo "could not pick up any data from the database";
@@ -25,21 +27,64 @@
       $pages = $row["pages"];
       $deadline = $row["deadline"];
       $discount = $row["discount_code"];
-      $description = $row["description"];
+      $desc = $row["description"];
       $ownership = $row["ownership"];
+      $status = $row["status"];
       $fileuploads = $row["file_uploads"];
+      $price = $row["price"];
     }
   }
 ?>
-<html>
-<head>
-<title>Job assign</title>
-<link type="text/css" href="assets/bower_components/foundation/css/foundation.min.css" rel="stylesheet">
-<script src = "assets/bower_components/foundation/js/vendor/jquery.js"></script>
-</head>
-<body>
-  <h1><?php echo $topic ?></h1>
-  <button class="button reveal" value="<?php echo $id ?>"  data-reveal-id="assign">Assign job</button>
+  <div class="row">
+  <div class="medium-6 column">
+    <h3><?php echo $topic ?> </h3>
+  </div>
+  <div class="medium-6 column">
+    <button class="button small reveal right" value="<?php echo $id ?>"  data-reveal-id="assign">Assign job</button>
+  </div>
+  </div>
+  <div class="row">
+    <div class="small-12 medium-12 columns">
+    <table>
+      <tr>
+        <td width=150>id</td>
+        <td width=150 style="border-right:1px solid teal;"><?php echo $id ?></td>
+        <td width=150>reference</td>
+        <td><?php echo $reference ?></td>
+      </tr>
+      <tr>
+        <td>topic</td>
+        <td style="border-right:1px solid teal;"><?php echo $topic ?></td>
+        <td>style</td>
+        <td><?php echo $style ?></td>
+      </tr>
+      <tr>
+        <td>type</td>
+        <td style="border-right:1px solid teal;"><?php echo $type ?></td>
+        <td>level</td>
+        <td><?php echo $level ?></td>
+      </tr>
+       <tr>
+        <td>language</td>
+        <td style="border-right:1px solid teal;"><?php echo $language ?></td>
+        <td>pages</td>
+        <td><?php echo $pages ?></td>
+      </tr>
+      <tr>
+        <td>price</td>
+        <td style="border-right:1px solid teal;"><?php echo $price ?></td>
+        <td>Description</td>
+        <td><?php echo $desc ?></td>
+      </tr>
+      <tr>
+        <td>status</td>
+        <td style="border-right:1px solid teal;"><?php echo $status ?></td>
+        <td>file uploads</td>
+        <td><?php echo $fileuploads ?></td>
+      </tr>
+    </table>
+  </div>
+  </div>
 <div id="assign" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
 <h1><center>Assign users</center></h1>
   <form action="assign.php" method="post">
@@ -66,12 +111,6 @@
     });
   </script>
 
-<script src = "assets/bower_components/foundation/js/foundation.js"></script>
-<script src = "assets/bower_components/foundation/js/foundation/foundation.reveal.js"></script>
-<script>
-  Foundation.global.namespace = '';
-  $(document).foundation();
-</script>
-
-</body>
-</html>
+<?php
+  }
+?>
