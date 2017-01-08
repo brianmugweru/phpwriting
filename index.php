@@ -2,6 +2,7 @@
   include_once("resources/templates/mainpage/masthead.html");
 ?>
    <!-- Row section to get auto spaces from left and right of margin -->
+<body>
     <div class="row">
       <div id="content">
         <!-- Page header lies here for layout -->
