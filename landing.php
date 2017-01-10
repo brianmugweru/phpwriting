@@ -1,28 +1,144 @@
 <?php
-  include("session.php");
-  echo "welcome ".$usersession;
+include("portal.php");
+
+function dashboard(){
   if(isset($_POST["submit"])){
     process();
   }else{
     display(array());
   }
-  function validate($fieldname, $missing){
-    if(in_array($fieldname, $missing)){
-      echo 'class="error"';
-    }
-  }
+}
+?>
 
-  function calculateprice($pages){
-    return $pages*10;
+<?php
+  function display($message){
+?>
+<body>
+<a href="failed.php">Repeat job</a><br>
+<a href="assigned.php">see assigned jobs</a><br>
+<a href="personal.php">view personal jobs</a><br>
+<form action="<?php $_PHP_SELF ?>" method="post" enctype="multipart/form-data">
+<div class="row">
+<div class="medium-6 columns">
+<div class="row">
+<div class="medium-3 columns">
+<label class="right inline" for="topic">Document Topic</label>
+</div>
+<div class="medium-9 columns">
+<input type="text" id="topic" name="topic">
+</div>
+</div>
+<div class="row">
+<div class="medium-3 columns">
+<label class="right inline"for="type">Document Type</label>
+</div>
+<div class="medium-9 columns">
+<select name="type" id="type"><?php include("resources/templates/orderform/doctype.html") ?></select>
+</div>
+</div>
+<div class="row">
+<div class="medium-3 columns">
+<label class="right inline"for="subject">Subject Area</label>
+</div>
+<div class="medium-9 columns">
+<select name="subject" id="subject"><?php include("resources/templates/orderform/subject.html") ?></select>
+</div>
+</div>
+<div class="row">
+<div class="medium-3 columns">
+<label class="right inline"for="level">Academic level</label>
+</div>
+<div class="medium-9 columns">
+<select name="academic" id="level"><?php include("resources/templates/orderform/edulevel.html") ?></select>
+</div>
+</div>
+<div class="row">
+<div class="medium-3 columns">
+<label class="right inline" for="style">Style</label>
+</div>
+<div class="medium-9 columns">
+<select name="style" id="style"><?php include("resources/templates/orderform/style.html") ?></select>
+</div>
+</div>
+<div class="row">
+<div class="medium-3 columns">
+<label class="right inline"for="lan">Preferred language</label>
+</div>
+<div class="medium-9 columns">
+<select name="language" id="lan"><?php include("resources/templates/orderform/language.html") ?></select>
+</div>
+</div>
+<div class="row">
+<div class="medium-3 columns">
+<label for="spacing" class="right inline">Spacing</label>
+</div>
+<div class="medium-9 columns">
+<select name="spacing" id="spacing"><?php include("resources/templates/orderform/spacing.html") ?></select>
+</div>
+</div>
+</div>
+<div class="medium-6 columns">
+<div class="row">
+<div class="medium-3 columns">
+<label class="right inline"for="ref">No. of references</label>
+</div>
+<div class="medium-9 columns">
+<input type="number" id="ref" name="ref">
+</div>
+</div>
+<div class="row">
+<div class="medium-3 columns">
+<label for="pages"class="right inline">No. of pages*</label>
+</div>
+<div class="medium-9 columns">
+<input type="number" id="pages" name="pages" placeholder="value between 1 and 100">
+</div>
+</div>
+<div class="row">
+<div class="medium-3 columns">
+<label class="right inline" for="deadline">deadline</label>
+</div>
+<div class="medium-9 columns">
+<select name="deadline"><?php include("resources/templates/orderform/deadline.html") ?></select>
+</div>
+</div>
+<div class="row">
+<div class="medium-3 columns">
+<label class="right inline"for="dis">Enter Special Discount code</label>
+</div>
+<div class="medium-9 columns">
+<input type="text" id="dis" name="discount">
+</div>
+</div>
+<div class="row">
+<div class="medium-3 columns">
+<label class="right inline"for="desc">Description</label>
+</div>
+<div class="medium-9 columns">
+<textarea name="desc" id="desc" style="resize:none"></textarea>
+</div>
+</div><br>
+<div class="row">
+<div class="medium-3 columns">
+<label class="right inline"for="upload">upload files</label>
+</div>
+<div class="medium-9 columns">
+<input class="right inline" type="file" id="upload" name="upload[]" multiple >
+</div>
+</div>
+<div class="row">
+<input type="hidden" name="username" value="<?php echo $usersession ?>" />
+<input type="submit" class="button small right radius" name="submit" value="Submit">
+</div>
+</div>
+</div>
+</div>
+</form>
+<?php
   }
-
-  function setvalue($fieldname){
-    if(isset($_POST[$fieldname])){
-      echo $_POST[$fieldname];
-    }
-  }
-
-  function process(){
+?>
+<?php
+function process(){
     $required = array('topic','ref','pages');
     $missing = array();
     foreach($required as $field){
@@ -37,7 +153,9 @@
       insert();
     }
   }
-  function upload(){
+?>
+<?php
+function upload(){
     $file_path = "files/";
     $max_file_size = 1024*1000;
     $count = 0;
@@ -68,9 +186,27 @@
       }
     return $output;
   }
+?>
+<?php
+  function validate($fieldname, $missing){
+    if(in_array($fieldname, $missing)){
+      echo 'class="error"';
+    }
+  }
 
+  function calculateprice($pages){
+    return $pages*10;
+  }
 
-  function insert(){
+  function setvalue($fieldname){
+    if(isset($_POST[$fieldname])){
+      echo $_POST[$fieldname];
+    }
+  }
+?>
+
+<?php
+function insert(){
     global $usersession;
     global $db;
     $topic = trim($_POST["topic"]);
@@ -82,7 +218,7 @@
     $lan = trim($_POST["language"]);
     $space = trim($_POST["spacing"]);
     $pages = trim($_POST["pages"]);
-    $deadline = trim($_POST["deadline"]);
+    $deadline = date("Y-m-d h:i:sa", strtotime(trim($_POST["deadline"])));
     $discount = trim($_POST["discount"]);
     $desc = trim($_POST["desc"]);
     $owner = $usersession;
@@ -95,50 +231,6 @@
     if(!$sql){
       echo "Could not insert data ".mysqli_error($db);
     }
-    echo $topic . "<br> " . $type."<br> ".$subject."<br> ".$academic."<br> ".$ref."<br> ".$style."<br> ".$lan."<br> ".$space."<br> ".$pages."<br> ".$deadline."<br> ".$discount."<br> ".$desc."<br> ". " <br>". "THE END DUDE<br>";
-  }
-  function display($message){
-?>
-<html>
-<head>
-<title>job details</title>
-</head>
-<body>
-<br><a href="logout.php">sign out</a><br>
-<a href="failed.php">Repeat job</a><br>
-<a href="assigned.php">see assigned jobs</a><br>
-<a href="personal.php">view personal jobs</a><br>
-<h1>Fill the form fields completely</h1>
-<form action="<?php $_PHP_SELF ?>" method="post" enctype="multipart/form-data">
-<label>Document Topic</label><br>
-<input type="text" name="topic"><br>
-<label>Document Type</label><br>
-<select name="type"><?php include("doctype.html") ?></select><br>
-<label>Subject Area</label><br>
-<select name="subject"><?php include("subject.html") ?></select><br>
-<label>Academic level</label><br>
-<select name="academic"><?php include("edulevel.html") ?></select><br>
-<label>Number of references</label><br>
-<input type="number" name="ref"><br>
-<label>Style</label><br>
-<select name="style"><?php include("style.html") ?></select><br>
-<label>Preferred language</label><br>
-<select name="language"><?php include("language.html") ?></select><br>
-<label>Spacing</label><br>
-<select name="spacing"><?php include("spacing.html") ?></select><br>
-<label>Number of pages(1 page(s)/275 Words)*</label><br>
-<input type="number" name="pages"><br>
-<p>please enter a value of between 1 and 100</p>
-<label>deadline</label><br>
-<select name="deadline"><?php include("deadline.html") ?></select><br>
-<label>Enter Special Discount code</label><br>
-<input type="text" name="discount"><br>
-<label>Description</label><br>
-<textarea name="desc" style="resize:none"></textarea><br>
-<label>upload files</label>
-<input type="file" name="upload[]" multiple ><br>
-<input type="hidden" name="username" value="<?php echo $usersession ?>" />
-<input type="submit" name="submit" value="Submit">
-<?php
-  }
+    header("location:personal.php");
+}
 ?>
