@@ -1,5 +1,5 @@
 <?php
-  require("config.php");
+  require($_SERVER["DOCUMENT_ROOT"].'/academic/resources/config.php');
   $username = $_POST["username"];
   $job_id = $_POST["job_id"];
   $sql = mysqli_query($db, "INSERT INTO assign(username, job_id) VALUES('$username','$job_id')");
@@ -10,6 +10,6 @@
     if(!$sql2){
       echo "Could not update data to the jobs table";
     }
-    header('location:admin.php');
+    header('location:../../admin.php');
   }
 ?>
