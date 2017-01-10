@@ -1,5 +1,5 @@
 <?php
-require("config.php");
+require("../config.php");
 if(isset($_POST["upload"]) && !empty($_FILES["files"])){
   if(!empty($_POST["job_id"])){
     upload();
@@ -13,7 +13,7 @@ else{
 }
     
 function upload(){
-  $file_path = "jobs/";
+  $file_path = "../../jobs/";
   $max_file_size = 1024*10000;
   $output = "";
   $name = $_FILES["files"]["name"];
