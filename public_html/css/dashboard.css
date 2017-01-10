@@ -69,11 +69,13 @@ p{
   background:#00897b;
   height:30px;
   line-height:30px;
+  transition:ease-in-out 0.4s !important
 }
 .top-bar-section li.active:not(.has-form) a:not(.button){
   background:#f3e5f5;
   color:#00897b;
   line-height:33px;
+  transition:ease-in-out 0.4s !important
 }
 
 .head{
