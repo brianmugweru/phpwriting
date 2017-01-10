@@ -54,9 +54,9 @@
         $_SESSION["username"] = $username;
 
         if($userrole =="normal"){
-          header("location:portal.php");
+          header("location:assigned.php");
         }else if($userrole=="admin"){
-          header("location:portal.php");
+          header("location:admin.php");
         }
       }
       else{
@@ -89,13 +89,13 @@
           <div class="medium-2 columns"></div>
           <div class="medium-10 columns end">
             <?php if(strlen($message)>0){?>
-              <p class="alert radius label" style="padding:9px; font-size:15px;"><?php echo $message ?></p>
+              <div data-alert class="alert-box radius alert" style="padding:9px; font-size:15px;"><?php echo $message ?><a href="#" class="close">&times;</a></div>
             <?php } ?>
             <?php if(sizeof($missing)>0){ ?>
-            <p class="alert radius label" style="padding:9px; font-size:15px;">
+            <div data-alert class="alert-box radius alert" style="padding:9px; font-size:15px;">
             <?php foreach($missing as $value){ ?>
                 <span><?php echo $value."," ?></span>
-            <?php }?>field[s] is required </p>
+            <?php }?>field[s] is required <a href="#" class="close">&times;</a></div>
               <?php } ?>
                       </div>
         </div><br>
@@ -124,6 +124,12 @@
       </div>
     </div>
   </form>
+<script type="text/javascript" src="public_html/bower_components/foundation/js/vendor/jquery.js"></script>
+    <script src="public_html/bower_components/foundation/js/foundation.min.js" type="text/javascript"></script>
+  <script type="text/javascript" src="public_html/bower_components/foundation/js/foundation/foundation.alert.js"></script>
+  <script>
+      $(document).foundation();
+  </script>
   </body>
 </html>
 <?php
