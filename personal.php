@@ -1,16 +1,12 @@
 <?php
-  require("session.php");
+  require("portal.php");
+  function dashboard(){
+  global $check_session, $db;
   $sql = mysqli_query($db, "SELECT * FROM jobs WHERE ownership = '$check_session'");
   if(!$sql){
     echo "could not pick up any data from the database";
   }
 ?>
-<html>
-<head>
-<title>view jobs</title>
-<link type="text/css" href="assets/bower_components/foundation/css/foundation.min.css" rel="stylesheet">
-<script src = "assets/bower_components/foundation/js/vendor/jquery.js"></script>
-</head>
 <body>
 <table>
 <tr>
@@ -32,7 +28,7 @@
       <td><?php echo $row["type"];?></td>
       <td><?php echo $row["subject"];?></td>
       <td><?php echo $row["pages"];?></td>
-      <td><?php echo $row["ownership"];?></td>
+      <td><?php echo $row["deadline"];?></td>
       <td><?php echo $row["language"];?></td>
       <td><?php echo $row["upload_date"];?></td>
       <td><?php echo $row["file_uploads"];?></td>
@@ -47,5 +43,4 @@
 <script src = "assets/bower_components/foundation/js/foundation/foundation.reveal.js"></script> <script> Foundation.global.namespace = '';
   $(document).foundation();
 </script>
-</body>
-</html>
+<?php }  ?>
