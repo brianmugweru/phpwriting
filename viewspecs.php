@@ -87,7 +87,7 @@
   </div>
 <div id="assign" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
 <h1><center>Assign users</center></h1>
-  <form action="assign.php" method="post">
+  <form action="resources/library/assign.php" method="post">
 <?php
   if(mysqli_num_rows($sql2) > 0){
     while($row = mysqli_fetch_assoc($sql2)){
