@@ -1,6 +1,7 @@
 <?php
-  require("session.php");
-  echo "welcome ".$usersession;
+  include("portal.php");
+function dashboard(){
+  global $db, $usersession;
   $sql = mysqli_query($db, "SELECT * FROM assign WHERE username = '$usersession' ");
   if(!$sql){
     echo "could not retrieve data". mysqli_error($db);
@@ -13,8 +14,9 @@
 </head>
 
 <body>
-<a href="logout.php">logout</a>
-<h3>Jobs you have been assigned by the admin</h3>
+<h3>order assigned</h3>
+<div class="row">
+<div class="medium-6 columns">
 <table>
 <?php
   if(mysqli_num_rows($sql)>0){
@@ -23,8 +25,8 @@
         if($row = mysqli_fetch_assoc($sql2)){
 ?>
 <tr>
-<td>topic</td>
-<td><?php echo $row["topic"];?></td>
+<td width=190>topic</td>
+<td width=190><?php echo $row["topic"];?></td>
 </tr>
 <tr>
 <td>type</td>
@@ -50,37 +52,33 @@
 <td>upload date</td>
 <td><?php echo $row["upload_date"];?></td>
 </tr>
-<tr>
-<td>file upload</td>
-<td><table><?php splitstr($row["file_uploads"])?></table></td>
-</tr>
 <td>upload job</td>
 <td><button class="reveal" value="<?php echo $row["id"] ?>" data-reveal-id="upload">Upload job</button></td>
 </tr>
+</tr>
+</table>
+</div>
+<div class="medium-6 columns">
+<dl>
+  <dt class="left">Description</dt><br>
+  <dd class="left"><?php echo $row["description"] ?></dd>
+  <dt class="left">File Uploads</dt><br>
+  <br><?php splitstr($row["file_uploads"]) ?>
+</dl>
+</div>
+</div>
 <?php
         }
      }
   }
   ?>
-</tr>
-</table>
-<?php
-  function splitstr($str){
-    $string = explode("|", $str);
-    foreach($string as $value){
-?>
-  <tr><td><a download="<?php echo $value ?>" href="<?php echo $value ?>" target="_blank"><?php echo $value ?></a></td></tr>
-<?php
-    }
-  }
-?>
-<div id="upload" class="reveal-modal" data-reveal aria-labellebdy="modalTitle" aria-hidden="true" role="dialog">
-<h1><center>Upload form</center></h1>
-<form action = "uploadwork.php" method = "post" enctype="multipart/form-data">
-<label>upload</label>
+
+<div id="upload" class="reveal-modal small" data-reveal aria-labellebdy="modalTitle" aria-hidden="true" role="dialog">
+<h1><center>Upload Order</center></h1>
+<form action = "resources/library/uploadwork.php" method = "post" enctype="multipart/form-data">
 <input type="file" name="files">
 <input type="hidden" name="job_id" class="jobid">
-<input type="submit" name="upload" value="submit">
+<input type="submit" name="upload" class="button small radius" value="submit">
 </form>
 <p><center>Please submit and wait for reply from admin</center></p>
   <a class="close-reveal-modal" aria-label="Close" href="admin.php">&#215;</a>
@@ -99,5 +97,16 @@
   Foundation.global.namespace = '';
   $(document).foundation();
 </script>
+<?php } ?>
+<?php
+  function splitstr($str){
+    $string = explode("|", $str);
+    foreach($string as $value){
+?>
+  <br><dd class="left"><a download="<?php echo $value ?>" href="<?php echo $value ?>" target="_blank"><?php echo $value ?></a></dd>
+<?php
+    }
+  }
+?>
 
 
