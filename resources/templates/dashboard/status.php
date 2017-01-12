@@ -42,7 +42,7 @@
 <?php }else if($status =="adminpoor"){ ?>
       <td>Repeat job</td>
 <?php }else if($status == "completed"){?>
-  <td><a href="check.php?job_id=<?php echo $row["id"] ?>" class="button">check job</a></td>
+  <td><a href="admcheck.php?job_id=<?php echo $row["id"] ?>" class="button tiny">check job</a></td>
 <?php }else{ ?>
 <td>getting nothing</td>
 <?php } ?>
