@@ -1,4 +1,6 @@
 <?php
+  $page = 'dashboard';
+  $pagetitle = "solo orders";
   require("portal.php");
   function dashboard(){
   global $check_session, $db;
@@ -17,11 +19,13 @@
 <td>deadline</td>
 <td>language</td>
 <td>upload date</td>
-<td>file upload</td>
+<td>pages</td>
+<td>order file</td>
 </tr>
 <?php
   if(mysqli_num_rows($sql) > 0){
     while($row = mysqli_fetch_assoc($sql)){
+      $status = $row["status"];
 ?>
 <tr>
       <td><?php echo $row["topic"];?></td>
@@ -31,7 +35,9 @@
       <td><?php echo $row["deadline"];?></td>
       <td><?php echo $row["language"];?></td>
       <td><?php echo $row["upload_date"];?></td>
-      <td><?php echo $row["file_uploads"];?></td>
+      <td><?php echo $row["pages"];?></td>
+      <td><a href="usercheck.php?job_id=<?php echo $row['id'] ?>">check job</a></td>
+
       <!--<td><?php echo $row["status"]; ?></td>-->
 </tr>
 <?php

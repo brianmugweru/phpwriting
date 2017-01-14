@@ -13,37 +13,41 @@
       </ul>
       <section class="top-bar-section">
         <ul class="left">
-          <li>
+          <li <?php if($page == 'dashboard'){ ?> class="active" <?php } ?>>
+            <?php if($role=='admin'){?>
             <a href="#">Dashboard</a>
+            <?php }else{ ?>
+            <a href="personal.php">Dashboard</a>
+            <?php } ?>
           </li>
-          <li class="active">
-            <a href="#">Orders Section</a>
+          <li <?php if($page == 'landing'){ ?> class="active" <?php } ?>>
+            <a href="landing.php">Order Paper</a>
           </li>
-          <li>
+          <li <?php if($page == 'writing'){ ?> class="active" <?php } ?>>
             <a href="#">Writing section</a>
           </li>
           <?php if($role=="admin"){?>
-          <li>
-            <a href="#">Manage jobs</a>
+          <li <?php if($page == 'orders'){ ?> class="active" <?php } ?>>
+            <a href="admin.php">Manage orders</a>
           </li>
           <?php } ?>
 
         </ul>
     
         <ul class="right">
-          <?php if($role=="admin"){?>
-          <li>
-            <a href="#">My users</a>
+        <?php if($role=="admin"){?>
+        <li <?php if($page == 'users'){ ?> class="active" <?php } ?>>
+            <a href="users.php">My users</a>
           </li>
           <?php } ?>
           <li>
             <a href="<?php echo LIBRARY_PATH.'/logout.php'  ?>">log out</a>
           </li>
 
-          <li>
+          <li <?php if($page == 'profile'){ ?> class="active" <?php } ?>>
             <a href="#">My Profile</a>
           </li>
-          <li>
+          <li <?php if($page == 'account'){ ?> class="active" <?php } ?>>
             <a href="#">My Account</a>
           </li>
         </ul>

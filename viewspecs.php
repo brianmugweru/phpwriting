@@ -1,4 +1,6 @@
 <?php
+$page = "orders";
+$pagetitle = "assign someone a job";
   include("portal.php");
   function dashboard(){
   $id = $_GET['job_id'];

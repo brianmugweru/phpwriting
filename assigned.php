@@ -1,4 +1,6 @@
 <?php
+$page = "orders";
+$pagetitle = "check if you've been assigned a job";
   include("portal.php");
 function dashboard(){
   global $db, $usersession;

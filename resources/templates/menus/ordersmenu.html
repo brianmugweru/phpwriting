@@ -1,26 +1,51 @@
 <ul class="menu menu-accordion">
+  <?php if($role=='admin'){ ?>
   <li>
     <i class="fa fa-user"></i><br>
-    <a href="#">Pending</a>
+    <a href="admin.php">uploaded</a>
   </li>
+  <?php } else{ ?>
   <li>
     <i class="fa fa-user"></i><br>
-    <a href="#">Assigned</a>
+    <a href="clientupload.php">uploaded</a>
   </li>
+  <?php } ?>
+  <?php if($role == 'admin'){?>
   <li>
     <i class="fa fa-user"></i><br>
-    <a href="#">completed</a>
+    <a href="stassign.php">Assigned</a>
   </li>
+  <?php }?>
+  <?php if($role == 'admin'){?>
   <li>
     <i class="fa fa-user"></i><br>
-    <a href="#">Finished</a>
+    <a href="completed.php">completed</a>
   </li>
+  <?php } else{?>
+  <li>
+    <i class="fa fa-user"></i><br>
+    <a href="clientcomplete.php">completed</a>
+  </li>
+  <?php } ?>
+  <?php if($role == 'admin'){?>
+  <li>
+    <i class="fa fa-user"></i><br>
+    <a href="orders.php">orders</a>
+  </li>
+  <?php } else{?>
+  <li>
+    <i class="fa fa-user"></i><br>
+    <a href="personal.php">personal</a>
+  </li>
+  <?php } ?>
+
+  <!--
   <li>
     <i class="fa fa-user"></i><br>
     <a href="#">payed</a>
   </li>
   <li>
     <i class="fa fa-user"></i><br>
-    <a href="#">active</a>
-  </li>
+    <a href="#">pending</a>
+  </li>-->
 </ul>

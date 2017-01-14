@@ -1,11 +1,13 @@
 <?php
-   function dashboard($status){
-      global $db;
-  $sql = mysqli_query($db, "SELECT * FROM jobs WHERE status = '".$status."'");
+function dashboard($userstatus){
+  global $check_session, $db;
+  $sql = mysqli_query($db, "SELECT * FROM jobs WHERE ownership = '$check_session' and status='$userstatus'");
   if(!$sql){
     echo "could not pick up any data from the database";
   }
+  echo $userstatus;
 ?>
+<body>
 <table>
 <tr>
 <td>topic</td>
@@ -15,35 +17,26 @@
 <td>deadline</td>
 <td>language</td>
 <td>upload date</td>
-<td>deadline</td>
-<td>client</td>
-<td>properties</td>
+<td>pages</td>
+<td>order file</td>
 </tr>
 <?php
   if(mysqli_num_rows($sql) > 0){
     while($row = mysqli_fetch_assoc($sql)){
+      $status = $row["status"];
 ?>
 <tr>
       <td><?php echo $row["topic"];?></td>
       <td><?php echo $row["type"];?></td>
       <td><?php echo $row["subject"];?></td>
       <td><?php echo $row["pages"];?></td>
-      <td><?php echo $row["ownership"];?></td>
+      <td><?php echo $row["deadline"];?></td>
       <td><?php echo $row["language"];?></td>
       <td><?php echo $row["upload_date"];?></td>
-      <td><?php echo $row["deadline"]; ?></td>
-      <td><?php echo $row["ownership"]; ?></td>
-<?php if($status == "uploaded"){ ?>
-      <td><a href="viewspecs.php?job_id=<?php echo $row["id"] ?>" class="button tiny">View job</a></td>
-<?php }else if($status =="adminpoor"){ ?>
-      <td>Repeat job</td>
-<?php }else if($status == "completed"){?>
-  <td><a href="admcheck.php?job_id=<?php echo $row["id"] ?>" class="button tiny">check job</a></td>
-<?php }else if($status =="assigned"){ ?>
-<td><a href="properties.php?job_id=<?php echo $row["id"] ?>">check ppts</a></td>
-<?php }else{ ?>
-<td>nothing bro</td>
-<?php } ?>
+      <td><?php echo $row["pages"];?></td>
+      <td><a href="usercheck.php?job_id=<?php echo $row['id'] ?>">check job</a></td>
+
+      <!--<td><?php echo $row["status"]; ?></td>-->
 </tr>
 <?php
     }
@@ -54,4 +47,6 @@
 <script src = "assets/bower_components/foundation/js/foundation/foundation.reveal.js"></script> <script> Foundation.global.namespace = '';
   $(document).foundation();
 </script>
-<?php } ?>
+<?php 
+}
+?>

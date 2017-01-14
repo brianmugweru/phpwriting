@@ -1,4 +1,5 @@
 <?php
+  $menu = "orders";
   $definestatus = 'adminpoor';
   include("resources/templates/dashboard/status.php");
   include("portal.php");

@@ -10,17 +10,12 @@ index page: Landing page for the application when url is clicked as well as redi
 login page: Requires a simple form template that users use to login to their portals
 signup page:Going to be quite huge since writers need to prove they can writes and this time round writers are also getting accounts and a normal portal for all users, just different access to resources.
 
-jobs according to their status's
-uploaded: All jobs uploaded to the database
-completed: jobs completed by the writers
-assigned: jobs assigned to writers to handle them
-adminpoor: Admin rating badly of jobs done by the users
-admingood: Means admin isnt satisfied with job already done
-notsatisfied: Means client not satisfied with how the job has been done and requires that it is reapeated
-satisfied: Means client is satisfied with the work and can go home happy.
-
-divide status into two
-  one where the status defines the stand of the admin to the job given... I just need to document it for better follow up of whatever happens within the app
-  Second status will go to whatever is really happening within the job... Coz both admin and client need to see what is really going down with the jobs
-  And next time i come around i'll be ready with the two status message... They sure do need documentation.
-  satisfied: Means client is satisfied with the work and can go home happy.
+admin jobs according to their status's
+uploaded/current: All jobs uploaded to the database
+completed/current: jobs completed by the writers
+assigned/current: jobs assigned to writers to handle them
+adminpoor/current: Admin rating badly of jobs done by the users
+admingood/current: Means admin isnt satisfied with job already done
+admingood/unsatisfied: Means client not satisfied with how the job has been done 
+admingood/satisfied: Means client is satisfied with the work and can go home happy.
+user_paid: job has writer paid and we are cleared of requirements of a job.

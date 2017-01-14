@@ -1,9 +1,13 @@
 <?php
-  include("portal.php");
-  function dashboard(){
+  
+function dashboard(){
+  global $orderstatus,$stgood,$stbad,$userstatus;
+  check($orderstatus,$stgood,$stbad,$userstatus);
+}
+function check($orderstatus,$stgood,$stbad,$usstatus){
   global $db;
   $job_id = $_GET["job_id"];
-  $sql = mysqli_query($db, "SELECT * FROM jobs WHERE status = 'completed' and id='".$_GET["job_id"]."'");
+  $sql = mysqli_query($db, "SELECT * FROM jobs WHERE status = '$orderstatus' and user_status = '$usstatus' and id='".$_GET["job_id"]."'");
   if(!$sql){
     echo "could not pick up any data from the database".mysqli_error($db);
   }
@@ -20,6 +24,9 @@
       $desc = $row["description"];
       $mainfile = $row["job_file"];
     }
+  }
+  else{
+    die("seriously cant find any rows that relate to that specific query");
   }
 ?>
 <body>
@@ -58,21 +65,35 @@
   </table>
   </div>
   <div class="medium-7 columns">
-  <ul style="list-style-type:none">
-    <li class='left'><h3>description</h3></li><br><br>
-      <ul style="list-style-type:none">
-        <li class="left"><?php echo $desc ?></li><br><br>
-      </ul>
-  <a class="left" href="academic/jobs/<?php echo $mainfile ?>">Job upload</a><br><br>
+  <dl style="list-style-type:none">
+    <?php if($row["description"]){ ?>
+    <dt><h3>description</h3></dt>
+    <dd style="margin-left:30px;"><?php echo $desc ?></dd>
+<?php } ?>
+    <?php if($row["file_uploads"]){ ?>
+    <dt><h3 style="font-size:20px;">File uploads</h3></dt>
+    <?php splitstr($row["file_uploads"]);?>
+<?php } ?>
+  </dl>
+      
+<?php if(strlen($stgood)>0 and strlen($stbad)>0){ ?>
+<div class="callout clearfix">
+  <a class="left button" href="academic/jobs/<?php echo $mainfile ?>">Order upload file</a>
+</div>
+<div class="callout clearfix">
     <button class="button small left reveal" value="<?php echo $job_id ?>"  data-reveal-id="assign">Verify job</button>
+</div>
+<?php } else{ ?>
+  <p> Thanks for coming around to check on the job, I appreciate it much</p>
+<?php }?>
     </div>
   </div>
 
 <div id="assign" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
 <h1><center>Verify job done</center></h1>
   <form action="resources/library/verify.php" method="post">
-  <input type="radio" name="verify" value="admingood" id="good" required><label for="good">Well done</label>
-  <input type="radio" name="verify" value="adminpoor" id="bad" required><label for="bad">poorly done</label>
+  <input type="radio" name="verify" value="<?php echo $stgood ?>" id="good" required><label for="good">Well done</label>
+  <input type="radio" name="verify" value="<?php echo $stbad ?>" id="bad" required><label for="bad">poorly done</label>
   <input type="hidden" name="job_id" class="jobid">
   <input type="submit" name="submit" value="submit">
   </form>
@@ -86,6 +107,16 @@
   </script>
 
 <?php } ?>
+<?php
+  function splitstr($str){
+    $string = explode("|", $str);
+    foreach($string as $value){
+?>
+  <dd style='margin-left:30px;'><a download="<?php echo $value ?>" href="<?php echo $value ?>" target="_blank"><?php echo $value ?></a></dd>
+<?php
+    }
+  }
+?>
 
-</body>
-</html>
+
+

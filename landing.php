@@ -1,4 +1,6 @@
 <?php
+$page = 'landing';
+$pagetitle = 'order page by filling in the fields';
 include("portal.php");
 
 function dashboard(){
@@ -14,9 +16,6 @@ function dashboard(){
   function display($message){
 ?>
 <body>
-<a href="failed.php">Repeat job</a><br>
-<a href="assigned.php">see assigned jobs</a><br>
-<a href="personal.php">view personal jobs</a><br>
 <form action="<?php $_PHP_SELF ?>" method="post" enctype="multipart/form-data">
 <div class="row">
 <div class="medium-6 columns">
@@ -128,7 +127,7 @@ function dashboard(){
 </div>
 <div class="row">
 <input type="hidden" name="username" value="<?php echo $usersession ?>" />
-<input type="submit" class="button small right radius" name="submit" value="Submit">
+<input type="submit" class="button small right radius " name="submit" value="Submit">
 </div>
 </div>
 </div>
@@ -231,6 +230,6 @@ function insert(){
     if(!$sql){
       echo "Could not insert data ".mysqli_error($db);
     }
-    header("location:personal.php");
+    header("location:clientupload.php");
 }
 ?>

@@ -1,5 +1,8 @@
 <?php
+  $menu = "orders";
+  $page = "orders";
   $definestatus = 'completed';
+  $pagetitle = "completed orders";
   include("resources/templates/dashboard/status.php");
   include("portal.php");
 ?>
