@@ -1,4 +1,6 @@
 <?php
+$page = "orders";
+$pagetitle="failed";
   $menu = "orders";
   $definestatus = 'adminpoor';
   include("resources/templates/dashboard/status.php");
