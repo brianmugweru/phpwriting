@@ -1,5 +1,5 @@
 <?php
-$page = "orders";
+$page = "writing";
 $pagetitle = "check if you've been assigned a job";
   include("portal.php");
 function dashboard(){
@@ -24,7 +24,7 @@ function dashboard(){
   if(mysqli_num_rows($sql)>0){
     while($row = mysqli_fetch_assoc($sql)){
       $sql2 = mysqli_query($db, "SELECT * FROM jobs WHERE id = '".$row["job_id"]."' AND status='assigned'");
-        if($row = mysqli_fetch_assoc($sql2)){
+        while($row = mysqli_fetch_assoc($sql2)){
 ?>
 <tr>
 <td width=190>topic</td>
