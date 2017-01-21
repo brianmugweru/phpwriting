@@ -36,7 +36,7 @@
       <td><?php echo $row["language"];?></td>
       <td><?php echo $row["upload_date"];?></td>
       <td><?php echo $row["pages"];?></td>
-      <td><a href="usercheck.php?job_id=<?php echo $row['id'] ?>">check job</a></td>
+      <td><a href="specific.php?job_id=<?php echo $row['id'] ?>">check job</a></td>
 
       <!--<td><?php echo $row["status"]; ?></td>-->
 </tr>
