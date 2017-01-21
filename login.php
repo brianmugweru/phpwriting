@@ -54,7 +54,7 @@
         $_SESSION["username"] = $username;
 
         if($userrole =="normal"){
-          header("location:assigned.php");
+          header("location:landing.php");
         }else if($userrole=="admin"){
           header("location:admin.php");
         }
