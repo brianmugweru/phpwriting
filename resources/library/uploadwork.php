@@ -45,6 +45,6 @@ function dataupdate($string){
   $sql = mysqli_query($db,"UPDATE jobs SET job_file='$string', status='completed' where id='$job_id'");
   if(!$sql) return("could not update data in database ".mysqli_error($db));
   else
-    header('location:landing.php');
+    header('location:../../landing.php');
 }
 
