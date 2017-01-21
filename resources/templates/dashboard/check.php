@@ -5,7 +5,7 @@ function dashboard(){
   check($orderstatus,$stgood,$stbad,$userstatus);
 }
 function check($orderstatus,$stgood,$stbad,$usstatus){
-  global $db;
+  global $db, $checksession;
   $job_id = $_GET["job_id"];
   $sql = mysqli_query($db, "SELECT * FROM jobs WHERE status = '$orderstatus' and user_status = '$usstatus' and id='".$_GET["job_id"]."'");
   if(!$sql){
@@ -84,7 +84,7 @@ function check($orderstatus,$stgood,$stbad,$usstatus){
     <button class="button small left reveal" value="<?php echo $job_id ?>"  data-reveal-id="assign">Verify job</button>
 </div>
 <?php } else{ ?>
-  <p> Thanks for coming around to check on the job, I appreciate it much</p>
+  <p><button class="tiny disabled">Paypal</button></p>
 <?php }?>
     </div>
   </div>

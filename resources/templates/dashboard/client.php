@@ -10,15 +10,15 @@ function dashboard($userstatus){
 <body>
 <table>
 <tr>
-<td>topic</td>
-<td>type</td>
-<td>subject</td>
-<td>pages</td>
-<td>deadline</td>
-<td>language</td>
-<td>upload date</td>
-<td>pages</td>
-<td>order file</td>
+<th>topic</th>
+<th>type</th>
+<th>subject</th>
+<th>pages</th>
+<th>deadline</th>
+<th>language</th>
+<th>upload date</th>
+<th>pages</th>
+<th>order file</th>
 </tr>
 <?php
   if(mysqli_num_rows($sql) > 0){
@@ -34,9 +34,13 @@ function dashboard($userstatus){
       <td><?php echo $row["language"];?></td>
       <td><?php echo $row["upload_date"];?></td>
       <td><?php echo $row["pages"];?></td>
-      <td><a href="usercheck.php?job_id=<?php echo $row['id'] ?>">check job</a></td>
-
-      <!--<td><?php echo $row["status"]; ?></td>-->
+      <?php if($row['status'] == 'admingood'){?>
+        <td><a class="button tiny" href="usercheck.php?job_id=<?php echo $row['id'] ?>">Rate Order</a></td>
+      <?php }else if($row["status"] == 'uploaded'){ ?>
+        <td><a class="button tiny" href="checkupload.php?job_id=<?php echo $row['id'] ?>">Pay for order</a></td>
+      <?php }else{ ?>
+      <td><?php echo $row["status"]; ?></td>
+      <?php } ?>
 </tr>
 <?php
     }

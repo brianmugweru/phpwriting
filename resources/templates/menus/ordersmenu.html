@@ -39,13 +39,27 @@
   </li>
   <?php } ?>
 
-  <!--
+  <?php if($role == 'admin'){?>
   <li>
     <i class="fa fa-user"></i><br>
     <a href="#">payed</a>
   </li>
+  <?php } else{?>
+  <li>
+    <i class="fa fa-user"></i><br>
+    <a href="assigned.php">Assigned</a>
+  </li>
+  <?php } ?>
+
+  <?php if($role == 'admin'){?>
   <li>
     <i class="fa fa-user"></i><br>
     <a href="#">pending</a>
-  </li>-->
+  </li>
+  <?php } else{?>
+  <li>
+    <i class="fa fa-user"></i><br>
+    <a href="repeat.php">waiting status</a>
+  </li>
+  <?php }?>
 </ul>
